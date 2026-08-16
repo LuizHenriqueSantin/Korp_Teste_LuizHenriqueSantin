@@ -1,0 +1,12 @@
+<mat-card appearance="outlined" class="app-page-card">
+  <mat-card-content>
+    <app-page-header title="Produtos" subtitle="Cadastro de produtos para uso em notas fiscais">
+      <button mat-raised-button color="primary" (click)="abrirFormulario()">
+        <mat-icon>add</mat-icon>
+        Novo produto
+      </button>
+    </app-page-header>
+
+    <app-data-table [columns]="colunas" [data]="produtos()" emptyMessage="Nenhum produto cadastrado ainda." />
+  </mat-card-content>
+</mat-card>

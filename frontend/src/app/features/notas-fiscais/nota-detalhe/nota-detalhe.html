@@ -1,0 +1,38 @@
+@if (nota(); as notaAtual) {
+  <mat-card appearance="outlined" class="app-page-card app-nota-detalhe__card">
+    <mat-card-content>
+      <app-page-header [title]="'Nota Fiscal #' + notaAtual.numero" class="app-nota-detalhe__no-print">
+        <button mat-button (click)="voltar()">
+          <mat-icon>arrow_back</mat-icon>
+          Voltar
+        </button>
+        @if (notaAtual.status === 'Aberta') {
+          <app-loading-button label="Imprimir" [loading]="imprimindo()" (clicked)="imprimir()" />
+        }
+      </app-page-header>
+
+      <section class="app-nota-detalhe__documento">
+        <div class="app-nota-detalhe__info">
+          <p>
+            <strong>Status:</strong>
+            <mat-chip
+              [class.app-nota-detalhe__chip--aberta]="notaAtual.status === 'Aberta'"
+              [class.app-nota-detalhe__chip--fechada]="notaAtual.status === 'Fechada'"
+            >
+              {{ notaAtual.status }}
+            </mat-chip>
+          </p>
+          <p><strong>Criada em:</strong> {{ notaAtual.dataCriacaoUtc | date: 'dd/MM/yyyy HH:mm' }}</p>
+          @if (notaAtual.dataFechamentoUtc) {
+            <p><strong>Fechada em:</strong> {{ notaAtual.dataFechamentoUtc | date: 'dd/MM/yyyy HH:mm' }}</p>
+          }
+        </div>
+
+        <h3>Itens</h3>
+        <app-data-table [columns]="colunasItens" [data]="notaAtual.itens" emptyMessage="Nota sem itens." />
+      </section>
+    </mat-card-content>
+  </mat-card>
+} @else {
+  <p>Carregando...</p>
+}

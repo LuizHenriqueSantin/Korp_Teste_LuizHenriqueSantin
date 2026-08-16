@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Estoque.API/Estoque.API.csproj" />
+    <Project Path="src/Estoque.Application/Estoque.Application.csproj" />
+    <Project Path="src/Estoque.Domain/Estoque.Domain.csproj" />
+    <Project Path="src/Estoque.Infrastructure/Estoque.Infrastructure.csproj" />
+    <Project Path="src/Faturamento.API/Faturamento.API.csproj" />
+    <Project Path="src/Faturamento.Application/Faturamento.Application.csproj" />
+    <Project Path="src/Faturamento.Domain/Faturamento.Domain.csproj" />
+    <Project Path="src/Faturamento.Infrastructure/Faturamento.Infrastructure.csproj" />
+    <Project Path="src/Gateway.API/Gateway.API.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Estoque.Application.Tests/Estoque.Application.Tests.csproj" />
+    <Project Path="tests/Faturamento.Application.Tests/Faturamento.Application.Tests.csproj" />
+  </Folder>
+</Solution>

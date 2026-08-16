@@ -1,0 +1,44 @@
+.app-nota-detalhe__documento {
+  h3 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.app-nota-detalhe__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+
+  p {
+    margin: 0;
+  }
+}
+
+mat-chip {
+  font-weight: 500;
+}
+
+.app-nota-detalhe__chip--aberta {
+  background-color: #fff3c4 !important;
+  color: #7a5c00;
+}
+
+.app-nota-detalhe__chip--fechada {
+  background-color: #c8e6c9 !important;
+  color: #1b5e20;
+}
+
+@media print {
+  :host ::ng-deep .app-nota-detalhe__no-print {
+    display: none !important;
+  }
+
+  :host ::ng-deep .app-nota-detalhe__card {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

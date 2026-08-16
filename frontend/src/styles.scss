@@ -1,0 +1,58 @@
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+
+  background-color: #f4f6f8;
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  margin: 0;
+  height: 100%;
+}
+
+.mat-mdc-snack-bar-container {
+  &.snackbar-sucesso .mdc-snackbar__surface {
+    background-color: #2e7d32 !important;
+  }
+
+  &.snackbar-erro .mdc-snackbar__surface {
+    background-color: #c62828 !important;
+  }
+}
+
+.app-page-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1a237e 0%, #283593 45%, #6a1b9a 100%);
+  }
+}
+
+.app-data-table th.mat-mdc-header-cell {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+}

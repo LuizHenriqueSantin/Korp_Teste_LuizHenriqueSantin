@@ -1,0 +1,26 @@
+.app-nota-form__itens {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-nota-form__linha {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.app-nota-form__produto {
+  flex: 3;
+}
+
+.app-nota-form__quantidade {
+  flex: 1;
+}
+
+.app-nota-form__acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}

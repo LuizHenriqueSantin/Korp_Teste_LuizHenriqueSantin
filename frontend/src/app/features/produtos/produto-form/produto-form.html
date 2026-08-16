@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Novo produto</h2>
+
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <mat-dialog-content class="app-produto-form__content">
+    <mat-form-field appearance="outline">
+      <mat-label>Codigo</mat-label>
+      <input matInput formControlName="codigo" required />
+      @if (form.controls.codigo.hasError('required') && form.controls.codigo.touched) {
+        <mat-error>Codigo e obrigatorio.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descricao</mat-label>
+      <input matInput formControlName="descricao" required />
+      @if (form.controls.descricao.hasError('required') && form.controls.descricao.touched) {
+        <mat-error>Descricao e obrigatoria.</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Saldo inicial</mat-label>
+      <input matInput type="number" formControlName="saldoInicial" required min="0" />
+      @if (form.controls.saldoInicial.hasError('min') && form.controls.saldoInicial.touched) {
+        <mat-error>Saldo nao pode ser negativo.</mat-error>
+      }
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    <app-loading-button label="Salvar" type="submit" [loading]="salvando()" />
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,35 @@
+# .NET build output
+bin/
+obj/
+*.user
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+
+# VS Code (raiz do repo - o frontend possui suas proprias regras em frontend/.gitignore)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Logs
+*.log
+
+# Arquivos de ambiente/local
+appsettings.*.local.json
+*.local.json
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Node (fallback, caso algum node_modules apareca fora de frontend/)
+node_modules/

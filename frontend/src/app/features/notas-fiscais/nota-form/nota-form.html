@@ -1,0 +1,50 @@
+<mat-card appearance="outlined" class="app-page-card">
+  <mat-card-content>
+    <app-page-header title="Nova nota fiscal" subtitle="Numeracao e status Aberta sao definidos automaticamente" />
+
+    <form [formGroup]="form" (ngSubmit)="salvar()">
+      <div formArrayName="itens" class="app-nota-form__itens">
+        @for (item of itens.controls; track $index) {
+          <div [formGroupName]="$index" class="app-nota-form__linha">
+            <mat-form-field appearance="outline" class="app-nota-form__produto">
+              <mat-label>Produto</mat-label>
+              <mat-select formControlName="codigoProduto" required>
+                @for (produto of produtos(); track produto.id) {
+                  <mat-option [value]="produto.codigo">
+                    {{ produto.codigo }} - {{ produto.descricao }} (saldo: {{ produto.saldo }})
+                  </mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="app-nota-form__quantidade">
+              <mat-label>Quantidade</mat-label>
+              <input matInput type="number" formControlName="quantidade" min="1" required />
+            </mat-form-field>
+
+            <button
+              mat-icon-button
+              type="button"
+              color="warn"
+              [disabled]="itens.length === 1"
+              (click)="removerItem($index)"
+              aria-label="Remover item"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        }
+      </div>
+
+      <button mat-button type="button" (click)="adicionarItem()">
+        <mat-icon>add</mat-icon>
+        Adicionar produto
+      </button>
+
+      <div class="app-nota-form__acoes">
+        <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+        <app-loading-button label="Criar nota" type="submit" [loading]="salvando()" />
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

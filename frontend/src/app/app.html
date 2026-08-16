@@ -1,0 +1,23 @@
+<mat-toolbar class="app-toolbar">
+  <div class="app-toolbar__marca">
+    <span class="app-toolbar__logo">
+      <mat-icon>receipt_long</mat-icon>
+    </span>
+    <span class="app-toolbar__titulo">Notas Fiscais</span>
+  </div>
+
+  <nav class="app-toolbar__nav">
+    <a class="app-toolbar__link" routerLink="/produtos" routerLinkActive="app-toolbar__link--ativo">
+      <mat-icon>inventory_2</mat-icon>
+      Produtos
+    </a>
+    <a class="app-toolbar__link" routerLink="/notas-fiscais" routerLinkActive="app-toolbar__link--ativo">
+      <mat-icon>description</mat-icon>
+      Notas Fiscais
+    </a>
+  </nav>
+</mat-toolbar>
+
+<main class="app-content">
+  <router-outlet />
+</main>

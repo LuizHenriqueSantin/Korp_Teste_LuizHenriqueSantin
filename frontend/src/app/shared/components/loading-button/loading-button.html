@@ -1,0 +1,12 @@
+<button
+  mat-raised-button
+  [color]="color()"
+  [type]="type()"
+  [disabled]="disabled() || loading()"
+  (click)="aoClicar()"
+>
+  @if (loading()) {
+    <mat-spinner diameter="18" class="app-loading-button__spinner" />
+  }
+  <span>{{ label() }}</span>
+</button>

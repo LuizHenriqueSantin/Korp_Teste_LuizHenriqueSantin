@@ -1,0 +1,30 @@
+.app-data-table {
+  width: 100%;
+
+  th.mat-mdc-header-cell {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}
+
+.app-data-table__row--clickavel {
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.app-data-table__vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.app-data-table__vazio-icone {
+  font-size: 2rem;
+  opacity: 0.6;
+}

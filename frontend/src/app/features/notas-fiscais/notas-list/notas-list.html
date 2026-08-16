@@ -1,0 +1,18 @@
+<mat-card appearance="outlined" class="app-page-card">
+  <mat-card-content>
+    <app-page-header title="Notas Fiscais" subtitle="Emissao e impressao de notas fiscais">
+      <button mat-raised-button color="primary" (click)="novaNota()">
+        <mat-icon>add</mat-icon>
+        Nova nota
+      </button>
+    </app-page-header>
+
+    <app-data-table
+      [columns]="colunas"
+      [data]="notas()"
+      [clickavel]="true"
+      emptyMessage="Nenhuma nota fiscal criada ainda."
+      (rowClick)="abrirDetalhe($event)"
+    />
+  </mat-card-content>
+</mat-card>
